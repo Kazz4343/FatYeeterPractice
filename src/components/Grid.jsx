@@ -6,7 +6,7 @@ export default function Grid() {
     const selsectedworkout = 4
 
     return (
-        <div className="traning-grid-plan">
+        <div className="traning-plan-grid">
             {Object.keys(training_plan).map((workout, workoutIndex) => {
                 const type = workoutIndex % 3 === 0 ? 
                 'Push' : 
@@ -14,7 +14,7 @@ export default function Grid() {
                     'Pull' : 
                     'Legs'
         
-                const traningPlan = training_plan[workoutIndex]
+                const trainingPlan = training_plan[workoutIndex]
                 const dayNum = ((workoutIndex / 8) <= 1) ? '0' + (workoutIndex + 1) : workoutIndex + 1
                 const icon = workoutIndex % 3 === 0 ? (
                     <i className='fa-solid fa-dumbbell'></i>
@@ -29,7 +29,7 @@ export default function Grid() {
                 
                 if (workoutIndex === selsectedworkout) {
                     return (
-                        <WorkoutCard key={workoutIndex} traningPlan={traningPlan} type={type} workoutIndex={workoutIndex} icon={icon} dayNum={dayNum} />
+                        <WorkoutCard key={workoutIndex} trainingPlan={trainingPlan} type={type} workoutIndex={workoutIndex} icon={icon} dayNum={dayNum} />
                     )
                 }
 
